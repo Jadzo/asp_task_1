@@ -1,4 +1,5 @@
-﻿using JadKaddor_ASP_task1.Models;
+﻿using JadKaddor_ASP_task1.Functions;
+using JadKaddor_ASP_task1.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -37,6 +38,7 @@ namespace JadKaddor_ASP_task1.Controllers
         }
 
         // POST: api/Outlet
+        [APIauth]
         public IHttpActionResult Post(Product product)
         {
 
@@ -56,6 +58,7 @@ namespace JadKaddor_ASP_task1.Controllers
         }
 
         // PUT: api/Outlet/5
+        [APIauth]
         public IHttpActionResult Put(int id, [FromBody] Product product)
         {
 
@@ -83,6 +86,7 @@ namespace JadKaddor_ASP_task1.Controllers
         }
 
         // DELETE: api/Outlet/5
+        [APIauth]
         public IHttpActionResult Delete(int id)
         {
             Product prod = products.Find(s => s.Id == id);
